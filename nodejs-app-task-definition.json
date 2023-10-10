@@ -1,6 +1,6 @@
 {
   "ipcMode": null,
-  "executionRoleArn": null,
+  "executionRoleArn": "arn:aws:iam::138645654058:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
       "dnsSearchDomains": null,
@@ -26,7 +26,7 @@
       "secrets": null,
       "dockerSecurityOptions": null,
       "memory": null,
-      "memoryReservation": null,
+      "memoryReservation": 256,
       "volumesFrom": [],
       "stopTimeout": null,
       "image": "138645654058.dkr.ecr.ap-south-1.amazonaws.com/node-app:latest",
@@ -50,20 +50,38 @@
     }
   ],
   "placementConstraints": [],
-  "memory": "1024",
-  "taskRoleArn": null,
+  "memory": null,
+  "taskRoleArn": "arn:aws:iam::138645654058:role/ecsTaskExecutionRole",
   "compatibilities": [
     "EXTERNAL",
     "EC2"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:138645654058:task-definition/node-app-task-def:1",
-  "family": "node-app-task-def",
+  "taskDefinitionArn": "arn:aws:ecs:ap-south-1:138645654058:task-definition/node-app-task:1",
+  "family": "node-app-task",
   "requiresAttributes": [
     {
       "targetId": null,
       "targetType": null,
       "value": null,
       "name": "com.amazonaws.ecs.capability.ecr-auth"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "com.amazonaws.ecs.capability.task-iam-role"
+    },
+    {
+      "targetId": null,
+      "targetType": null,
+      "value": null,
+      "name": "ecs.capability.execution-role-ecr-pull"
     }
   ],
   "pidMode": null,
@@ -72,7 +90,7 @@
   ],
   "networkMode": null,
   "runtimePlatform": null,
-  "cpu": "1024",
+  "cpu": null,
   "revision": 1,
   "status": "ACTIVE",
   "inferenceAccelerators": null,
